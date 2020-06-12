@@ -24,7 +24,7 @@ while (length < 8 || length > 128) {
   for (i = 0; i < choices.length; i++) {
     var wanted = confirm("Do you want to include " + choices[i] + "?");
     choices[choiceKeys[i]] = wanted;
-    console.log(choices[i] " : " choices[choiceKeys[i]];)
+    console.log(choices[i] " : " choices[choiceKeys[i]]);
   }
 
   passwordText.value = password;
