@@ -5,7 +5,12 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-//prompt for all selections on click
+  passwordText.value = password;
+
+}
+
+function generatePassword(password) {
+  //prompt for all selections on click
   var length = 0;  
 while (length < 8 || length > 128) {
    var length = prompt("How long? 8-128");
@@ -18,21 +23,13 @@ while (length < 8 || length > 128) {
                  "uppercase" : false,
                 "numeric" : false,
                "special" : false};
-  var choiceKeys = choices.keys;
-  var chartypes = "";
+  
   alert("Please choose from the following character types to include in your password:");
   for (var key in choices) {
     var wanted = confirm("Do you want to include " + key + "?");
     choices[key] = wanted;
     console.log(key + " : " +  choices[key]);
   }
-
-  passwordText.value = password;
-
-}
-
-function generatePassword(password) {
-
 }
 
 // Add event listener to generate button
