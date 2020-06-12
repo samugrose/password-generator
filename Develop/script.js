@@ -39,14 +39,30 @@ while (length < 8 || length > 128) {
     var uppercase = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
     var special = '~!@#$%^&*()_'.split('');
     var numeric = '0123456789'.split('');
-    console.log(lc + " " +  uc + " " + sc + " " + num);
+    console.log(numeric[0]);
+    
   for (i = 0; i < length; i++) { //generate random characters, return value
-    dictator[randomInt(dictator.length)]
+    var ind = randomInt(dictator.length);
+    //console.log(ind + " is ind, char is " + char[ind]);
+    var char = dictator[ind]; 
+    console.log();//gives one of the char types
+    //console.log(char[0] + "in dictator"); //could just loop through and have if be 0-size
+    if (char === "lowercase") {
+      pw += lowercase[randomInt(lowercase.length)];
+    } else if (char === "uppercase") {
+        console.log("entered uppercase");
+      pw += uppercase[randomInt(uppercase.length)];
+    }else if (char === "numeric") {
+      pw += numeric[randomInt(numeric.length)];
+    } else { //special
+      pw += special[randomInt(special.length)];
+    }
+    console.log(char + " : " + pw)
   }
 }
 
 function randomInt(value) { //produces random int between 0 and value
-  Math.floor(Math.random() * value);
+  return Math.floor(Math.random() * value);
 }
 
 // Add event listener to generate button
