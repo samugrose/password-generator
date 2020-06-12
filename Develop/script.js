@@ -13,7 +13,19 @@ while (length < 8 || length > 128) {
      alert("You must choose a length between 8-128!");
    }
 }
-  var charTypes = prompt("which character types would you like? lowercase, uppercase, numeric, special?");
+//choices as boolean values, confirmed by confirm function
+  var choices = {"lowercase" : false,
+                 "uppercase" : false,
+                "numeric" : false,
+               "special" : false};
+  var choiceKeys = choices.keys;
+  var chartypes = "";
+  alert("Please choose from the following character types to include in your password:");
+  for (i = 0; i < choices.length; i++) {
+    var wanted = confirm("Do you want to include " + choices[i] + "?");
+    choices[choiceKeys[i]] = wanted;
+    console.log(choices[i] " : " choices[choiceKeys[i]];)
+  }
 
   passwordText.value = password;
 
