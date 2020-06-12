@@ -21,10 +21,10 @@ while (length < 8 || length > 128) {
   var choiceKeys = choices.keys;
   var chartypes = "";
   alert("Please choose from the following character types to include in your password:");
-  for (i = 0; i < choices.length; i++) {
-    var wanted = confirm("Do you want to include " + choices[i] + "?");
-    choices[choiceKeys[i]] = wanted;
-    console.log(choices[i] " : " choices[choiceKeys[i]]);
+  for (var key in choices) {
+    var wanted = confirm("Do you want to include " + key + "?");
+    choices[key] = wanted;
+    console.log(key + " : " +  choices[key]);
   }
 
   passwordText.value = password;
