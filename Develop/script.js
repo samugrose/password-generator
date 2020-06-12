@@ -23,13 +23,30 @@ while (length < 8 || length > 128) {
                  "uppercase" : false,
                 "numeric" : false,
                "special" : false};
-  
+  var dictator = [];  //for included choices by user
   alert("Please choose from the following character types to include in your password:");
   for (var key in choices) {
     var wanted = confirm("Do you want to include " + key + "?");
     choices[key] = wanted;
-    console.log(key + " : " +  choices[key]);
+    if (wanted === true) {
+      dictator.push(key);
+    }
+    console.log(dictator); 
+  } //dictator loaded up, now to choose some chars
+  //choose random number and random selection from there to include
+    var pw = "";
+    var lowercase = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    var uppercase = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+    var special = '~!@#$%^&*()_'.split('');
+    var numeric = '0123456789'.split('');
+    console.log(lc + " " +  uc + " " + sc + " " + num);
+  for (i = 0; i < length; i++) { //generate random characters, return value
+    dictator[randomInt(dictator.length)]
   }
+}
+
+function randomInt(value) { //produces random int between 0 and value
+  Math.floor(Math.random() * value);
 }
 
 // Add event listener to generate button
