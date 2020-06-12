@@ -6,7 +6,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-
+  alert("Your secure password: " + password);
 }
 
 function generatePassword(password) {
@@ -59,6 +59,7 @@ while (length < 8 || length > 128) {
     }
     console.log(char + " : " + pw)
   }
+  return pw;
 }
 
 function randomInt(value) { //produces random int between 0 and value
